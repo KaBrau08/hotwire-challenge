@@ -1,0 +1,19 @@
+html,
+body
+	@include ai(center)
+	@include df()
+	font:
+		family: $Roboto
+		size: 16px
+	line-height: 1.3em
+	justify-content: center
+	min-height: 100%
+
+button
+	color: white
+	cursor: pointer
+	background-color: #e64142
+	@include bxsh(0 1px 1px 0 rgba(0,0,0,.2))
+	padding: 10px
+	&:hover
+		background-color: #ab2325

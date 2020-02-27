@@ -1,0 +1,74 @@
+.modal-container
+	animation: ModalIn 0.4s linear forwards
+	background-color: rgba(51, 51, 51, 0)
+	height: 100vh
+	left: 0
+	overflow: hidden
+	position: fixed
+	top: 0
+	width: 100vw
+	z-index: 1
+	.modal-wrapper
+		animation: WrapperIn 0.4s linear forwards
+		display: grid
+		grid-template-areas: 'top' 'bottom'
+		grid-template-rows: 1fr auto
+		height: 100%
+		top: 100%
+		position: relative
+		.modal-mask
+			grid-area: top
+		.modal-box
+			background-color: white
+			@include bdrs(10px 10px 0 0)
+			@include bxsh((0 9px 46px 8px rgba(0,0,0,.2), 0 24px 38px 4px rgba(0,0,0,.2), 0 11px 15px -7px rgba(0,0,0,.2)))
+			grid-area: bottom
+			padding: 20px
+			position: relative
+			.close-button
+				cursor: pointer
+				height: 20px
+				position: absolute
+				right: 10px
+				top: 10px
+				width: 20px
+				svg
+					display: block
+					height: 100%
+					width: 100%
+					line
+						fill: none
+						fill: none
+						stroke: #000000
+						stroke-width: 2
+						stroke-linecap: square
+						stroke-linejoin: arcs
+
+.modal-container.modal-out
+	animation: ModalOut 0.4s linear forwards
+	.modal-wrapper
+		animation: WrapperOut 0.4s linear forwards
+
+@keyframes ModalIn
+	0%
+		background-color: rgba(51, 51, 51, 0)
+	100%
+		background-color: rgba(51, 51, 51, 0.5)
+
+@keyframes ModalOut
+	0%
+		background-color: rgba(51, 51, 51, 0.5)
+	100%
+		background-color: rgba(51, 51, 51, 0)
+
+@keyframes WrapperIn
+	0%
+		top: 100%
+	100%
+		top: 0%
+
+@keyframes WrapperOut
+	0%
+		top: 0%
+	100%
+		top: 100%
